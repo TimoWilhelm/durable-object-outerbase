@@ -1,15 +1,19 @@
 {
 	"name": "durable-object-outerbase",
 	"version": "0.0.0",
+	"type": "module",
 	"private": true,
 	"scripts": {
-		"deploy": "wrangler deploy",
-		"dev": "wrangler dev",
-		"start": "wrangler dev",
-		"cf-typegen": "wrangler types"
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "npm run build && vite preview",
+		"deploy": "npm run build && wrangler deploy"
 	},
 	"devDependencies": {
+		"@cloudflare/vite-plugin": "^1.2.1",
+		"@outerbase/browsable-durable-object": "^0.1.1",
 		"typescript": "^5.5.2",
+		"vite": "^6.3.5",
 		"wrangler": "^4.15.1"
 	}
 }
